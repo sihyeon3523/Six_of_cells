@@ -1,0 +1,7 @@
+﻿Django==3.2
+tensorflow==2.5.0
+tensorflow-addons==0.17.0
+transformers==4.8.2
+sentencepiece==0.1.96
+torch==1.11.0
+pandas==1.2.4

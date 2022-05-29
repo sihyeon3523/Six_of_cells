@@ -1,0 +1,43 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'visitors_book/style.css' %}" />
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>수정님의 미니홈피</title>
+  <!-- 화면 자동 축소/확대 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+</head>
+
+
+
+<body>
+  <div class="page-header">
+    <h1><a href="{% url 'index' %}">수정님의 미니홈피</a></h1>
+  </div>
+  <div style="width:66%; border: 1px solid grey; border-radius: 5px; padding: 10px; margin-left: 15%; margin-right: 15%">
+    📣 나 입 무거워 ~
+  </div>
+
+  <br>
+
+  <div class="minimi"></div>
+
+    <form action="today_emotion.html" method="post">
+      <button type='submit' style="margin-right: 15%; float:right; border: 1px solid grey; border-radius: 5px">등록</button>
+      <br>
+      <br>
+      <input class='user_input' type="text" maxlength=300 placeholder="방명록을 작성해주세요.(300자이내)">
+    </form>
+
+
+  <!-- <div style="width:70%; height:50%; border:1px solid grey; border-radius: 5px; margin-left: 15%">
+  </div> -->
+
+</body>
+</html>

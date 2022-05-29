@@ -1,0 +1,80 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>2022 MINI HOMEPAGE</title>
+   <link rel="stylesheet" type="text/css" href="{% static 'visitors_book/font.css' %}" />
+   <link rel="stylesheet" type="text/css" href="{% static 'visitors_book/layout.css' %}" />
+   <link rel="stylesheet" type="text/css" href="{% static 'visitors_book/home.css' %}" />
+   <link rel="stylesheet" type="text/css" href="{% static 'visitors_book/visitor.css' %}" />
+   <link rel="stylesheet" type="text/css" href="{% static 'visitors_book/emotion.css' %}" />
+   <style>
+     @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Nanum+Gothic&display=swap%27);
+    </style>
+  <!-- 화면 자동 축소/확대 -->
+</head>
+
+<body>
+  <div class="bookcover">
+    <div class="bookdot">
+      <div class="page">
+
+        <div class="column1">
+          <div class="visit">TODAY <span id="TODAY" style="color: red;">28</span> | TOTAL 24562</div>
+          <div class="profile">
+            <img class="profile-image">
+            <div class="profile-text"><strong>수정</strong><br>ㄴr는 슬플 ㄸĦ 노㉣łı를 들øł..</div>
+          </div>
+        </div>
+
+        <!--  -->
+        <div class="column2">
+
+          <div class="top-text-box">
+            <div class="title">수정의 미니홈피</div>
+          </div>
+
+          <!-- emotion.css -->
+          <div class="main-content">
+
+            <div class="visitor-box-container">
+
+               <div class="visitor-box basic-text">
+
+                <div id="bold-text"><strong>오늘의 감정분석 결과</strong></div>
+                <hr>
+
+                <img src="images/emotion_dashboard.jpg" alt="emotion-dashboard">
+                <h1>{{ total_array }}</h1>
+
+                <div style="float:right;">
+                  <button type="button" class="btn" onclick="location.href='/music_choice/'"> music</button>
+                  <!-- <button class="btn"> Subscribe</button> -->
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+          <!--  -->
+
+        </div>
+        <!--  -->
+
+        <div class="menu">
+            <a href="#"><div class="menu-box">홈</div></a>
+            <a href="#"><div class="menu-box">다이어리</div></a>
+            <a href="#"><div class="menu-box">사진첩</div></a>
+            <a href="#"><div class="visitors_book">방명록</div></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'visitors_book/style.css' %}" />
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>수정님의 미니홈피</title>
+
+  <!-- 화면 자동 축소/확대 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("input[type='checkbox']").on("click", function(){
+      let count = $("input:checked[type='checkbox']").length;
+
+      if(count > 3){
+        $(this).prop("checked", false);
+          alert("3개까지만 선택할 수 있습니다.");
+      }
+    });
+  });
+
+  function reload(){
+    document.location.reload();
+  }
+
+  $(document).ready(function(){
+    $("#flexCheckChecked").change(function(){
+      if($("#flexCheckChecked").is(":checked")){
+        $("#clean").val('클릭 시 바뀌는 값이 나옵니다');
+      }
+    });
+  });
+  </script>
+
+
+</head>
+
+<body>
+  <div class="page-header">
+    <h1>수정님의 미니홈피</h1>
+  </div>
+  <!-- <div class='box' style="border: 1px solid grey; border-radius: 5px; padding: 10px; margin: auto">
+    📣 나 입 무거워
+  </div> -->
+
+  <br>
+  <form name='song-list'>
+  <input type="button" value="곡 재 선택" id="clean">
+  <input type="button" value="선택 초기" onclick="reload()">
+  <!-- https://getbootstrap.kr/docs/5.1/forms/checks-radios/ -->
+  <div style='border-width:1px 0;border-style:solid;margin:30px 0;text-align:;'>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
+      Chekced checkbox1
+    </label>
+  </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+      <label class="form-check-label" for="flexCheckChecked">
+        Chekced checkbox2
+      </label>
+  </div>
+  <div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+      <label class="form-check-label" for="flexCheckChecked">
+        Chekced checkbox3
+      </label>
+  </div>
+  <div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+      <label class="form-check-label" for="flexCheckChecked">
+        Chekced checkbox4
+      </label>
+  </div>
+  <div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+      <label class="form-check-label" for="flexCheckChecked">
+        Chekced checkbox5
+      </label>
+  </div>
+  <div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+      <label class="form-check-label" for="flexCheckChecked">
+        Chekced checkbox6
+      </label>
+  </div>
+  <div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+      <label class="form-check-label" for="flexCheckChecked">
+        Chekced checkbox7
+      </label>
+  </div>
+  <div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+      <label class="form-check-label" for="flexCheckChecked">
+        Chekced checkbox8
+      </label>
+  </div>
+  <div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+      <label class="form-check-label" for="flexCheckChecked">
+        Chekced checkbox9
+      </label>
+  </div>
+  <div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+      <label class="form-check-label" for="flexCheckChecked">
+        Chekced checkbox10
+      </label>
+  </div>
+  <div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+      <label class="form-check-label" for="flexCheckChecked">
+        Chekced checkbox11
+      </label>
+  </div>
+  <div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+      <label class="form-check-label" for="flexCheckChecked">
+        Chekced checkbox12
+      </label>
+  </div>
+  </div>
+
+  </form>
+
+  <button type="button" class="btn btn-link">제출하기</button>
+
+  <!-- <div style="width:100px; height:150px; border:1px solid grey; border-radius: 5px; float:left; margin-left: 102px; margin-right:10px;">
+  </div>
+  <div style="width:350px; height:150px; border:1px solid grey; border-radius: 5px; float:left;"> -->
+</body>
+</html>

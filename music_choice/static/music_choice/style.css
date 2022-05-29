@@ -1,0 +1,359 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "KOTRAHOPE";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  width: 100%;
+  background-color: #a3a3a3;
+  background-image: url(./images/pattern.png);
+  background-size: 90px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  margin: 0;
+  padding: 0;
+}
+div {
+  margin: 0;
+  padding: 0;
+}
+.bookcover {
+  width: 900px;
+  height: 600px;
+  background-color: #b4d1da;
+  border-radius: 10px;
+  margin: 100px auto;
+  position: relative;
+}
+.bookdot {
+  border: 1px solid aliceblue;
+  border-radius: 7px;
+  border-style: dashed;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 97.5%;
+  height: 96.5%;
+}
+.page {
+  background-color: rgb(235, 230, 230);
+  border-radius: 7px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 97.5%;
+  height: 96%;
+
+  display: flex;
+}
+.left-box {
+  flex: 0.4;
+  display: flex;
+  flex-direction: column;
+}
+.left-box > .visit-count {
+  flex: 0.07;
+  display: flex;
+  font-size: 12px;
+  margin-top: 10px;
+
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Pretendard-Regular";
+}
+.left-box > .visit-count > span {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.left-box > .box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.visit-count span:first-child {
+  color: red;
+}
+.main-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.main-box > .post-box {
+  flex: 0.07;
+  display: flex;
+  font-size: 13px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 10px;
+
+  font-family: "Pretendard-Regular";
+}
+.post-name {
+  margin-right: 25%;
+}
+.box {
+  border: 1px solid rgb(151, 151, 151);
+  background-color: white;
+  border-radius: 7px;
+  margin: 10px;
+  margin-top: 0;
+
+  height: auto;
+}
+.main-box > .box {
+  flex: 1;
+  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+}
+.side-menu {
+  flex: 0.14;
+  display: flex;
+  margin: 10px;
+  margin-left: 0;
+}
+.profile-img {
+  flex: 0.3;
+}
+.profile-img > img {
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+  margin-top: 10%;
+}
+.profile-post {
+  flex: 0.3;
+  margin: 10%;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Pretendard-Regular";
+}
+
+.update-news,
+.miniroom {
+  margin-left: 5%;
+  margin-top: 10px;
+  border-bottom: 2px solid gray;
+  width: 90%;
+  color: #267d97;
+  font-weight: bolder;
+}
+.miniroom {
+  margin-top: 5%;
+}
+.update-box {
+  display: flex;
+  margin-left: 5%;
+}
+.update-left-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-family: "Black Han Sans", sans-serif;
+  font-family: "Jua", sans-serif;
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 13px;
+}
+.picture,
+.board {
+  display: flex;
+}
+.update-right-box {
+  flex: 1;
+}
+.pnamebox {
+  background-color: rgb(66, 148, 224);
+  width: fit-content;
+  padding: 2px;
+  border-radius: 7px;
+  margin-top: 5px;
+  color: white;
+}
+
+.bnamebox {
+  background-color: rgb(218, 75, 32);
+  width: fit-content;
+  padding: 2px;
+  border-radius: 7px;
+  margin-top: 5px;
+  color: white;
+}
+
+.pnamebox,
+.bnamebox {
+  margin-right: 5px;
+}
+.firstline,
+.secondline {
+  width: 180px;
+  display: flex;
+  border-bottom: 1px dotted gray;
+  justify-content: space-between;
+
+  margin-top: 5px;
+}
+
+.firstline > div > span {
+  color: blue;
+  margin-left: 10px;
+}
+.secondline > div > span {
+  color: blue;
+  margin-left: 10px;
+}
+.picture,
+.board {
+  align-items: center;
+}
+.picture > span,
+.board > span {
+  padding-top: 3px;
+}
+
+.board-info {
+  font-family: "KOTRAHOPE";
+  font-size: 14px;
+}
+
+/* body {
+    background-color: rgb(150, 150, 150);
+    background-image: url('./images/pattern.png');
+    background-size: 100px;
+}
+
+
+.bookcover{
+    background-color: #b4d1da;
+    width: 1000px;
+    height: 600px;
+    margin: 75px auto;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+.bookdot{
+    position: relative;
+    left: 5px;
+    top: 5px;
+    width: 990px;
+    height: 590px;
+    border: 1px dashed white;
+    border-radius: 1%;
+}
+
+
+.page {
+    background-color: white;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 980px;
+    height: 580px;
+    border-radius: 1%;
+}
+
+.page-header {
+  margin-top: 120;
+  margin-left: 100
+}
+
+.box{
+  width: 450px
+} */
+
+
+/* * {
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    margin: 0 auto;
+    width: 1000px;
+}
+
+
+p {
+    padding: 10px;
+}
+
+
+nav {
+    background-color: #eeeeee;
+    padding: 0px 10px;
+}
+
+
+nav div{
+    display: inline-block;
+    padding: 20px;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+
+.left-box{
+    float: left;
+    background-color: #eeeeee;
+    width: 20%;
+    margin: 20px 1px;
+    padding: 20px;
+}
+
+
+.profile-image{
+    background-color: white;
+    width: 100%;
+    height: 100px;
+}
+
+
+.profile-content{
+    background-color: #fff492;
+    width: 100%;
+
+}
+
+
+.center-box{
+    float: right;
+    background-color: #eeeeee;
+    width: 70%;
+    margin: 20px 1px;
+    padding: 20px;
+}
+
+
+.content-box{
+    background-color: #fff492;
+    width: 100%;
+} */

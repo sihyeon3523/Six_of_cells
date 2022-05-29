@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+   <meta charset="UTF-8">
+   <title>index</title>
+  <link rel="stylesheet" href="{% static 'index/index.css' %}">
+
+ </head>
+ <body>
+    <div class="bgimage">
+        <div class="menu">
+
+            <!-- <div class="leftmenu">
+                <h4> NICK </h4>
+            </div>
+
+            <div class="rightmenu">
+                <ul>
+                    <li id="firstlist">Home</li>
+                    <li>Services</li>
+                    <li>Work</li>
+                    <li>About Us</li>
+                    <li>Blogs</li>
+                    <li>Contact</li>
+                </ul>
+            </div> -->
+
+        </div>
+        <div class="text">
+            <div class="title">
+              <!-- <h4>by 육미의 세포들</h4> -->
+              <h1> 나는 슬플 때 노래를 들어..♬ </h1>
+              <!-- <h1> ㄴr는 슬플 ㄸĦ 노㉣łı를 들øł.. </h1> -->
+              <h3> 너의 오늘 감정을 적어봐
+              너에게 딱 맞는 노래를 추천해줄게 ♥ </h3>
+            </div>
+            <div class="form">
+              <form method="post" action="/visitors_book/" class="post-form">
+                {% csrf_token %}
+                {{ form }}
+                <button type="submit" class="btn"> Today is...</button>
+              <!-- <button type="button" class="btn" onclick="location.href='/visitors_book/'"> Today is...</button> -->
+              <!-- <button class="btn"> Subscribe</button> -->
+              </form>
+            </div>
+        </div>
+
+    </div>
+    <!-- /* coding with nick */ -->
+  </body>
+
+</html>
