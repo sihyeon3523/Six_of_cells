@@ -1,21 +1,21 @@
 # Flow
 <hr>
 
-# 1. Index
+## 1. Index
 
 <br>
 
-# 2. visitors_book
+## 2. visitors_book
 
 <br>
 
-# 3. emotion dashboard
+## 3. emotion dashboard
 
 <br>
 
-# 4. music choice
+## 4. music choice
 
 <br>
 
-# 5. music recommendation
+## 5. music recommendation
 
