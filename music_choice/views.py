@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import pandas as pd
+from . import music_similarity
 
 # Create your views here.
 def music_choice(request):
@@ -40,24 +41,22 @@ def music_choice(request):
 
 
 def recommendation(request):
-    song_title = request.POST.getlist("answer[]")
+    seed_song = request.POST.getlist("answer[]")
+
+    song_recom = music_similarity.find_simi_song(seed_song,6)
 
     total_array = request.POST["total_array"]
 
-    ## 추천 알고리즘
+    emotion_recom = music_similarity.user_song_simi(song_recom,total_array)
 
-    context = {'total_array':total_array, "song_title":song_title}
+    recom_songs_list = []
+    for row in emotion_recom.iterrows():
+    #     print(row[1][0]) #제목
+    #     print(row[1][2]) #가수
+
+        recom_songs_list.append((row[1][0],row[1][2]))
+
+
+    context = {"recom_songs_list":recom_songs_list}
 
     return render(request, 'music_choice/recommendation.html', context)
-
-
-# from django.shortcuts import render
-# from django.http import HttpResponse
-#
-# # Create your views here.
-# def music_choice(request):
-#
-#     return render(request, 'music_choice/music_choice.html', {})
-#
-# def recommendation(request):
-#     return render(request, 'music_choice/recommendation.html', {})
