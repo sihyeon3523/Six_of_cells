@@ -40,14 +40,28 @@
              <div class="box">
                <div class="miniroom">힐링 노래 추천 드려요!</div>
                <div class="miniroom-box">
+<<<<<<< HEAD
                  <h1>{{ total_array }}</h1>
                  {{ song_title}}
+=======
+                 <!-- <img src="{% static 'visitors_book/images/cyworld-face.png'%}" style="float:right; margin-left:20px; height:100px;"> -->
+
+>>>>>>> ffa86486f11a3855e2fddd3ec5604140ceb8474c
                  <br>
-                 <img src="{% static 'music_choice/images/muzi2.png'%}" class="next" style="float:left; margin-left:20px; height:20px;display:inline-block;">&nbsp 'WE GO' - 프로미스나인 (fromis_9) <p>
+                 {% for title, artist in recom_songs_list %}
+                    <img src="{% static 'music_choice/images/muzi2.png'%}" class="next" style="float:left; margin-left:20px; height:20px;display:inline-block;">&nbsp
+                    {{ title }} - {{ artist }}  <p>
+                 {% endfor %}
+                 <!-- <img src="{% static 'music_choice/images/muzi2.png'%}" class="next" style="float:left; margin-left:20px; height:20px;display:inline-block;">&nbsp 'WE GO' - 프로미스나인 (fromis_9) <p>
                  <img src="{% static 'music_choice/images/muzi2.png'%}" class="next" style="float:left; margin-left:20px; height:20px;display:inline-block;">&nbsp '둘 중에 골라 (Summer or Summer)' - 효린, 다솜 (HYOLYN, DASOM)  <p>
                  <img src="{% static 'music_choice/images/muzi2.png'%}" class="next" style="float:left; margin-left:20px; height:20px;display:inline-block;">&nbsp 'DM' - 프로미스나인 (fromis_9)  <p>
                  <img src="{% static 'music_choice/images/muzi2.png'%}" class="next" style="float:left; margin-left:20px; height:20px;display:inline-block;">&nbsp 'KNOCK (With PARKMOONCHI(박문치))' - Kwon Jin Ah(권진아) <p>
+<<<<<<< HEAD
                  <img src="{% static 'music_choice/images/muzi2.png'%}" class="next" style="float:left; margin-left:20px; height:20px;display:inline-block;">&nbsp '냉면 (차가운얼굴)' - 명카드라이브 <p>
+=======
+                 <img src="{% static 'music_choice/images/muzi2.png'%}" class="next" style="float:left; margin-left:20px; height:20px;display:inline-block;">&nbsp '냉면 (차가운얼굴)' - 명카드라이브 <p> -->
+                 <!-- <img class="miniroom-img" src="https://media1.giphy.com/media/wwg1suUiTbCY8H8vIA/giphy.gif?cid=ecf05e47tfqxd92twhj3p43bt316hshv9fe7ral2orho7h4v&rid=giphy.gif&ct=g" alt=""> -->
+>>>>>>> ffa86486f11a3855e2fddd3ec5604140ceb8474c
                </div>
                <br>
              </div>
