@@ -1,7 +1,13 @@
 # Flow
-<hr>
 
 [1. Index](#1.-Index)
+
+[2. visitors book](#2.-visitors-book)
+
+[3. music choice](#3.-music-choice)
+
+<hr>
+
 
 ## 1. Index
 <img width="80%" src="https://user-images.githubusercontent.com/78069770/170901780-900b327f-27d0-4ff8-955b-94fa5e278038.png"/>
@@ -12,7 +18,7 @@
 
 <br>
 
-## 2. visitors_book
+## 2. visitors book
 <img width="80%" src="https://user-images.githubusercontent.com/78069770/170902050-103d6b5d-b3bd-4386-9326-075e3487f2b3.png"/>
   
   - views.visitors_book를 통해 호출하면서 timezone.now()로 현재시간을 가져와 방명록 작성시간 보여줌   
