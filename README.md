@@ -1,6 +1,6 @@
 # Flow
 
-[1. Index](#1.-Index)
+[1. Index](#1.-index)
 
 [2. visitors book](#2.-visitors-book)
 
