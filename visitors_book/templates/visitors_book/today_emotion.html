@@ -28,7 +28,7 @@
           <div class="visit">TODAY <span id="TODAY" style="color: red;">28</span> | TOTAL 24562</div>
           <div class="profile">
             <img class="profile-image">
-            <div class="profile-text"><strong>수정</strong><br>ㄴr는 슬플 ㄸĦ 노㉣łı를 들øł..</div>
+            <div class="profile-text"><strong>{{ form }}</strong><br>ㄴr는 슬플 ㄸĦ 노㉣łı를 들øł..</div>
           </div>
         </div>
 
@@ -50,10 +50,15 @@
                 <hr>
 
                 <img src="{% static 'visitors_book/images/emotion_dashboard.jpg'%}" width='400' alt="emotion-dashboard">
-                <h1>{{ total_array }}</h1>
+                <form action="{% url 'music_choice:music_choice'%}" method="post">
+                  {% csrf_token %}
+                  <h1>{{ total_array }}</h1>
+                  <input type='hidden' name="total_array" value="{{ total_array }}">
+                  <input type='submit' name='제출하기'>
+                </form>
 
                 <div style="float:right;">
-                  <button type="button" class="btn" onclick="location.href='/music_choice/'"> music</button>
+                  <!-- <button type="button" class="btn" onclick="location.href='/music_choice/'"> music</button> -->
                   <!-- <button class="btn"> Subscribe</button> -->
                 </div>
 

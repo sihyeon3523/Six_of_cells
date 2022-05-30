@@ -5,6 +5,8 @@ import pandas as pd
 # Create your views here.
 def music_choice(request):
 
+    total_array = request.POST["total_array"]
+
     happiness = pd.read_csv("./data/happiness.csv", encoding='utf-8', lineterminator='\n')
     anger = pd.read_csv("./data/anger.csv", encoding='utf-8', lineterminator='\n')
     sadness = pd.read_csv("./data/sadness.csv", encoding='utf-8', lineterminator='\n')
@@ -31,15 +33,22 @@ def music_choice(request):
 
         random_songs_list.append((row[1][0],row[1][1]))
 
-    context = {'random_songs_list':random_songs_list}
+    context = {'random_songs_list':random_songs_list, 'total_array':total_array}
 
 
     return render(request, 'music_choice/music_choice.html', context)
 
 
 def recommendation(request):
-    return render(request, 'music_choice/recommendation.html', {})
+    song_title = request.POST.getlist("answer[]")
 
+    total_array = request.POST["total_array"]
+
+    ## 추천 알고리즘
+
+    context = {'total_array':total_array, "song_title":song_title}
+
+    return render(request, 'music_choice/recommendation.html', context)
 
 
 # from django.shortcuts import render
