@@ -1,89 +1,94 @@
 {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'visitors_book/style_2.css' %}" />
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>2022 MINI HOMEPAGE</title>
-   <link rel="stylesheet" type="text/css" href="{% static 'visitors_book/font.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'visitors_book/layout.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'visitors_book/home.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'visitors_book/visitor.css' %}" />
-   <style>
-      @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Nanum+Gothic&display=swap%27);
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>2022 MINI HOMEPAGE</title>
+    <link rel="stylesheet" href="{% static 'visitors_book/font_2.css' %}" />
+    <link rel="stylesheet" href="{% static 'visitors_book/layout_2.css' %}" />
+    <link rel="stylesheet" href="{% static 'visitors_book/home_2.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'visitors_book/visitor_2.css' %}" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Nanum+Gothic&display=swap');
     </style>
-  <!-- 화면 자동 축소/확대 -->
-</head>
 
-<body>
-  <div class="bookcover">
-    <div class="bookdot">
-      <div class="page">
-        <div class="column1">
-          <div class="visit">TODAY <span id="TODAY" style="color: red;">28</span> | TOTAL 24562</div>
-          <div class="profile">
-            <img class="profile-image">
-            <div class="profile-text"><strong>{{ form }}</strong><br>ㄴr는 슬플 ㄸĦ 노㉣łı를 들øł..</div>
-          </div>
-        </div>
-        <div class="column2">
-          <div class="top-text-box">
-            <div class="title">{{ form }}의 미니홈피</div>
-          </div>
+    <link href="//fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+  </head>
 
-          <!-- home.css -->
-          <div class="main-content">
-            <div class="visitor-box-container">
-
-               <div class="visitor-box basic-text">
-
-                  <div id="bold-text"><strong>방명록</strong></div>
-                  <hr>
-
-                  <div class="visitor-box-title">no.1 <span id="blue">수정</span> {{ current_time }}</div>
-                  <div class="visitor-box-content">
-                      <div class="visitor-img" ><img src="{% static 'visitors_book/images/minimi_1.JPEG'%}" alt="minimi_1"></div>
-
-                      <div style='float: right; margin-left: 10%'>
-
-                        {% if error_message %}
-                        <p><strong>{{ error_message }}</strong><p>
-                        {% endif %}
-
-                        <form action="{% url 'today_emotion' %}" method="POST" class="main-form">
-                          {% csrf_token %}
-                          <textarea name="target_sentence" cols="50" rows='10' style='font:12px;' placeholder="정확한 감정분석을 위해 문장이 끝날 때마다 문장기호를 꼭 작성해주세요! (300자)"></textarea><br>
-                          <input type="submit" style="font-size: 12px;" value='감성 분석하기' id='input_submit' ></input>
-                        </form>
-                      </div>
-
-                  </div>
-
+  <body>
+     <div class="bookcover">
+       <div class="bookdot">
+         <div class="page">
+           <div class="left-box">
+             <div class="visit-count">TODAY<span>28</span>| TOTAL<span>243423</span></div>
+             <div class="box">
+               <!-- <div class="profile-img"><img src="https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256_960_720.jpg" alt="profile"></div> -->
+               <div class="profile-img"><img src="{% static 'visitors_book/images/profile_image.png' %}" alt="profile"></div>
+               <div class="profile-post">오늘도 피곤한 하루를 <br>끝낸 ㄴr 에게 <br>CHEERS!</div>
+               <div class="profile-footer">
+                 <select name="page" id="page" class="select-wave" onchange="window.open(value,'_blank');">
+                   <option value="none"><a class="dropdown-item" href="#">바로가기</a></option>
+                   <option value="https://cafe.naver.com/codeuniv">코뮤니티로 가기</option>
+                   <option value="https://codemate.kr/">코드메이트로 가기</option>
+                 </select>
                </div>
-
-               <div class="visitor-box basic-text">
-
-                   <div class="visitor-box-title">no.1 <span id="blue">반휘혈</span> (2002.08.09 09:16)</div>
-                   <div class="visitor-box-content">
-                       <div class="visitor-img"><img src="{% static 'visitors_book/images/minimi_2.JPEG' %}" alt="minimi_2"></div>
-                       <div class="visitor-text">학교라는 감옥에 갇혀..</div>
-                   </div>
-
-               </div>
-
              </div>
-          </div>
-        </div>
-        <!--  -->
-        <div class="menu">
-            <a href="#"><div class="menu-box">홈</div></a>
-            <a href="#"><div class="menu-box">다이어리</div></a>
-            <a href="#"><div class="menu-box">사진첩</div></a>
-            <a href="#"><div class="visitors_book">방명록</div></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
+           </div>
+           <div class="main-box">
+             <div class="post-box">
+               <div class="post-name">ㄴr만의 도토ㄹi BOX</div>
+               <!-- <div class="post-url">https://minihompage/doremi</div> -->
+             </div>
+
+             <!-- 여기서부터 내용 받기 -->
+             <div class="box">
+               <div class="visitor-box-container">
+
+                 <div class="visitor-box basic-text">
+                   <div class="miniroom">ㅂ┣보 oㅑ    오H   ┖ ┩   혼ㅈ┞   힘 드 ㄹ┦ㅎH</div>
+                   <div class="miniroom-box">
+                   <div class="visitor-box-title">no.1 <span id="blue">{{ form }}</span> {{ current_time }}</div>
+                   <div class="visitor-box-content">
+                     <div class="visitor-img" ><img src="{% static 'visitors_book/images/minimi_1.JPEG'%}" alt="minimi_1"></div>
+
+                     <div style='float: right; margin-left: 10%'>
+
+                       {% if error_message %}
+                       <p><strong>{{ error_message }}</strong><p>
+                       {% endif %}
+
+                       <form action="{% url 'today_emotion' %}" method="POST" class="main-form">
+                         {% csrf_token %}
+                         <textarea name="target_sentence" cols="38" rows='10' style='font:12px;' placeholder="오늘의 기분을 300자 이내로 표현해 주세요. 마침표는 꼭!"></textarea><br>
+                         <input type="submit" style="font-size: 12px; width: 100px;" value='감성 분석하기' id='input_submit' ></input>
+                       </form>
+                     </div>
+                 </div>
+
+              <div class="visitor-box basic-text">
+                  <div class="visitor-box-title">no.2 <span id="blue">반휘혈</span> (2002.08.09 09:16)</div>
+                  <div class="visitor-box-content">
+                      <div class="visitor-img"><img src="{% static 'visitors_book/images/minimi_2.JPEG' %}" alt="minimi_2"></div>
+                      <div class="visitor-text">학교라는 감옥에 갇혀..</div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+           </div>
+           </div>
+
+
+           <div class="side-menu">
+             <div class="side-menubar">
+               <a href="{% url 'index:index' %}">홈</a>
+               <a href="{% url 'visitors_book:index' %}">방명록</a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </body>
+ </html>
 </html>

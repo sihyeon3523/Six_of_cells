@@ -39,9 +39,16 @@ def predict_sentiment_user(sentence_list, tokenizer, model):
 
     #분석된 4개 감정별 확률
     total_array = np.ndarray.round( (np.array([(anger, scary, sad, happy)]) / (anger + scary + sad + happy)), 2)
+
+    # 감정과 확률 매칭
+    emotions = ['분노와 혐오','놀람과 공포','슬픔','행복']
+    total_array_emotions = []
+    for i in range(len(emotions)):
+        total_array_emotions.append((emotions[i], total_array[0][i]))
+
     #가장 높은 확률값
     top_pred_prob = total_array[0][np.argmax(total_array, axis=1)[0]]
     #가장 높은 확률의 감정
     top_pred_class = ['분노혐오','놀람공포','슬픔','행복'][np.argmax(total_array, axis=1)[0]]
 
-    return total_array, top_pred_prob, top_pred_class
+    return total_array, top_pred_prob, top_pred_class, total_array_emotions

@@ -42,9 +42,9 @@ def today_emotion(request):
         tokenizer = settings.TOKENIZER_KOBERT
         model = settings.MODEL_KOBERT
 
-        total_array, top_pred_prob, top_pred_class = predict_sentiment_func.predict_sentiment_user(processed_input, tokenizer, model)
+        total_array, top_pred_prob, top_pred_class, total_array_emotions = predict_sentiment_func.predict_sentiment_user(processed_input, tokenizer, model)
 
-        context = {'total_array': total_array}
+        context = {'total_array': total_array, 'top_pred_prob': top_pred_prob, 'top_pred_class':top_pred_class, 'total_array_emotions': total_array_emotions}
 
     except:
         context = {"error_message": "방명록을 입력해주세요."}

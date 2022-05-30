@@ -13,31 +13,6 @@
     </style>
 
     <link href="//fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-    $(document).ready(function(){
-      $("input[type='checkbox']").on("click", function(){
-        let count = $("input:checked[type='checkbox']").length;
-
-        if(count > 3){
-          $(this).prop("checked", false);
-            alert("3개까지만 선택할 수 있습니다.");
-        }
-      });
-    });
-
-    function reload(){
-      document.location.reload();
-    }
-
-    $(document).ready(function(){
-      $("#flexCheckChecked").change(function(){
-        if($("#flexCheckChecked").is(":checked")){
-          $("#clean").val('클릭 시 바뀌는 값이 나옵니다');
-        }
-      });
-    });
-    </script>
   </head>
   <body>
      <div class="bookcover">
@@ -46,7 +21,7 @@
            <div class="left-box">
              <div class="visit-count">TODAY<span>28</span>| TOTAL<span>243423</span></div>
              <div class="box">
-               <div class="profile-img"><img src="https://cdn.pixabay.com/photo/2021/10/19/10/56/cat-6723256_960_720.jpg" alt="profile"></div>
+               <div class="profile-img"><img src="{% static 'visitors_book/images/profile_image.png' %}" alt="profile"></div>
                <div class="profile-post">오늘도 피곤한 하루를 <br>끝낸 ㄴr 에게 <br>CHEERS!</div>
                <div class="profile-footer">
                  <select name="page" id="page" class="select-wave" onchange="window.open(value,'_blank');">
@@ -63,30 +38,8 @@
                <div class="post-url">https://minihompage/doremi</div>
              </div>
              <div class="box">
-                 <div class="update-news">UPDATE NEWS</div>
-                 <div class="update-box">
-                   <div class="update-left-box">
-                     <div class="picture"><div class="pnamebox">사진첩</div><span>오랜 친구들과 손잡고</span></div>
-                     <div class="board"><div class="bnamebox">게시판</div><span>롯데월드 갔다옴</span></div>
-                     <div class="board"><div class="bnamebox">게시판</div><span>학교 가기 싫다</span></div>
-                     <div class="picture"><div class="pnamebox">사진첩</div><span>놀러가기로 한 계획표</span></div>
-                   </div>
-                   <div class="update-right-box">
-                     <div class="board-info">
-                       <div class="firstline">
-                         <div>다이어리<span> 0/25</span></div>
-                         <div>사진첩<span> 0/25</span></div>
-                       </div>
-                       <div class="secondline">
-                         <div>게시판<span> 0/25</span></div>
-                         <div>방명록<span> 0/25</span></div>
-                       </div>
-                     </div>
-                   </div>
-                 </div>
                <div class="miniroom">힐링 노래 추천 드려요!</div>
                <div class="miniroom-box">
-                 <!-- <img src="{% static 'visitors_book/images/cyworld-face.png'%}" style="float:right; margin-left:20px; height:100px;"> -->
                  <h1>{{ total_array }}</h1>
                  {{ song_title}}
                  <br>
@@ -95,17 +48,14 @@
                  <img src="{% static 'music_choice/images/muzi2.png'%}" class="next" style="float:left; margin-left:20px; height:20px;display:inline-block;">&nbsp 'DM' - 프로미스나인 (fromis_9)  <p>
                  <img src="{% static 'music_choice/images/muzi2.png'%}" class="next" style="float:left; margin-left:20px; height:20px;display:inline-block;">&nbsp 'KNOCK (With PARKMOONCHI(박문치))' - Kwon Jin Ah(권진아) <p>
                  <img src="{% static 'music_choice/images/muzi2.png'%}" class="next" style="float:left; margin-left:20px; height:20px;display:inline-block;">&nbsp '냉면 (차가운얼굴)' - 명카드라이브 <p>
-                 <!-- <img class="miniroom-img" src="https://media1.giphy.com/media/wwg1suUiTbCY8H8vIA/giphy.gif?cid=ecf05e47tfqxd92twhj3p43bt316hshv9fe7ral2orho7h4v&rid=giphy.gif&ct=g" alt=""> -->
                </div>
                <br>
              </div>
            </div>
            <div class="side-menu">
              <div class="side-menubar">
-               <a href="#">홈</a>
-               <a href="#">다이어리</a>
-               <a href="#">사진첩</a>
-               <a href="#">방명록</a>
+               <a href="{% url 'index:index' %}">홈</a>
+               <a href="{% url 'visitors_book:index' %}">방명록</a>
              </div>
            </div>
          </div>

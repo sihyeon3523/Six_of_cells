@@ -4,7 +4,7 @@ from .forms import PostForm
 # Create your views here.
 
 def index(request):
-
+    # form = request.POST['form']
     form = PostForm()
 
     return render(request,"index/index.html",{"form":form})
