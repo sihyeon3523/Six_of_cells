@@ -53,8 +53,7 @@
 
                         <form action="{% url 'today_emotion' %}" method="POST" class="main-form">
                           {% csrf_token %}
-                          <textarea name="target_sentence" cols="50" rows='10' style='font:12px;' placeholder="정확한 감정분석을 위해 문장이 끝날 때마다 문장기호를 꼭 작성해주세요! (300자)">
-                          </textarea><br>
+                          <textarea name="target_sentence" cols="50" rows='10' style='font:12px;' placeholder="정확한 감정분석을 위해 문장이 끝날 때마다 문장기호를 꼭 작성해주세요! (300자)"></textarea><br>
                           <input type="submit" style="font-size: 12px;" value='감성 분석하기' id='input_submit' ></input>
                         </form>
                       </div>
