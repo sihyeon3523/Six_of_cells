@@ -87,7 +87,17 @@
                <div class="miniroom">듣고 싶은 노래를 3개 선택해주세요</div>
 
                <div class="miniroom-box">
+                 
+                  {% for title, artist in random_songs_list %}
 
+                     <div class="form-check">
+                       <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                       <label class="form-check-label" for="flexCheckChecked">
+                         {{ title }} - {{ artist }}
+                       </label>
+                     </div>
+
+                   {% endfor %}
                  <!-- <img class="miniroom-img" src="https://media1.giphy.com/media/wwg1suUiTbCY8H8vIA/giphy.gif?cid=ecf05e47tfqxd92twhj3p43bt316hshv9fe7ral2orho7h4v&rid=giphy.gif&ct=g" alt=""> -->
                </div>
 
