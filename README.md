@@ -9,13 +9,13 @@
 
 <br>
 
-## 3. emotion dashboard
+## 2.1 emotion dashboard
 
 <br>
 
-## 4. music choice
+## 3. music choice
 
 <br>
 
-## 5. music recommendation
+## 3.1 music recommendation
 
