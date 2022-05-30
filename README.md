@@ -12,9 +12,11 @@
 
 - html 태그들 삭제, 텍스트만 남기기
 - 문장 별로 element, 리스트에 저장 
-
+- 성인 인증 필요한 가사 삭제
 
 <br>
 
 ## Lyrics_03_sentimentTagging.ipynb
 학습된 KoBERT 모델, 노래 감성 분류 태깅
+
+- 24시간 + 2시간 소요
