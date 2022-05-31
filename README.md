@@ -18,5 +18,5 @@
 
 ## Lyrics_03_sentimentTagging.ipynb
 학습된 KoBERT 모델, 노래 감성 분류 태깅
-
+한 곡당 20-30초 
 - 24시간 + 2시간 소요
