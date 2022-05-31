@@ -1,4 +1,4 @@
-# Six_of_cells
+# 육미의 세포들 - 멜론 웹 스크래핑 설명
 
 ## Lyrics_01_scrapingMelon.ipynb <br>
 멜론 가사 스크래핑 <br>
