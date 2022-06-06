@@ -1,0 +1,2 @@
+# ignore all .cpython-38.pyc files
+*.cpython-38.pyc
