@@ -14,9 +14,9 @@ import re
 
 
 def visitors_book(request):
-
-    current_time = timezone.now()
-    context = {'current_time':current_time}
+    user_name = request.POST['user_name']
+    current_time = timezone.localtime().strftime('%Y.%m.%d %H:%M')
+    context = {'current_time':current_time, "user_name":user_name}
 
     return render(request, 'visitors_book/base.html', context) #base.html 방명록 글 시간에 넣을 것임
 
@@ -25,9 +25,10 @@ def visitors_book(request):
 #kobert 모델에 사용자 인풋 넣어서 확률 얻기
 def today_emotion(request):
     try:
-                                        #base.html에서 사용자가 입력한 글
-        target_sentence = request.POST['target_sentence']
 
+        #base.html에서 사용자가 입력한 글
+        target_sentence = request.POST['target_sentence']
+        user_name = request.POST['user_name']
         user_input = str(target_sentence)
 
         # 문장 분리
@@ -44,7 +45,7 @@ def today_emotion(request):
 
         total_array, top_pred_prob, top_pred_class, total_array_emotions = predict_sentiment_func.predict_sentiment_user(processed_input, tokenizer, model)
 
-        context = {'total_array': total_array, 'top_pred_prob': top_pred_prob, 'top_pred_class':top_pred_class, 'total_array_emotions': total_array_emotions}
+        context = {'total_array': total_array, 'top_pred_prob': top_pred_prob, 'top_pred_class':top_pred_class, 'total_array_emotions': total_array_emotions, "user_name":user_name}
 
     except:
         context = {"error_message": "방명록을 입력해주세요."}

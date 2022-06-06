@@ -3,7 +3,7 @@
 <html lang="ko">
  <head>
    <meta charset="UTF-8">
-   <title>index</title>
+   <title>육미의 세포들 HOME</title>
   <link rel="stylesheet" href="{% static 'index/index.css' %}">
 
  </head>
@@ -21,15 +21,18 @@
               너에게 딱 맞는 노래를 추천해줄게 ♥ </h2>
             </div>
             <div class="form">
-              <!-- <form method="post" action="/visitors_book/" class="post-form"> -->
+
               <form method="post" action="{% url 'visitors_book:index' %}"  class="post-form">
                 {% csrf_token %}
-                {{ form }}
-                <!-- <textarea name="username" style="width: 20%; height: 2em;"
-                placeholder="이름을 입력해주세요">
-              </textarea> -->
+                <p>이름: <input type="text" name="user_name" value=" ">
                 <button type="submit" class="btn"> Today is...</button>
               </form>
+
+              <!-- <form method="post" action="{% url 'visitors_book:index' %}"  class="post-form">
+                {% csrf_token %}
+                {{ form }} -->
+                <!-- <button type="submit" class="btn"> Today is...</button>
+              </form> -->
             </div>
         </div>
 

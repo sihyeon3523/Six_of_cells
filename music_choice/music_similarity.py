@@ -34,3 +34,9 @@ def user_song_simi(song_recom,total_array):
 
 
     return song_recom.iloc[song_recom_index]
+
+def random_recom():
+    song_df = pd.read_csv("./data/song_total.csv",index_col=0)
+    random_df = song_df.sample(n=5, replace=False)
+
+    return random_df

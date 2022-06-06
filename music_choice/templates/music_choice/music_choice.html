@@ -47,19 +47,19 @@
              <div class="visit-count">TODAY<span>28</span>| TOTAL<span>243423</span></div>
              <div class="box">
                <div class="profile-img"><img src="{% static 'visitors_book/images/profile_image.png' %}" alt="profile"></div>
-               <div class="profile-post">오늘도 피곤한 하루를 <br>끝낸 ㄴr 에게 <br>CHEERS!</div>
-               <div class="profile-footer">
+               <div class="profile-post">오늘도 피곤한 하루를 <br>끝낸 ㄴr 에게 <br> CHEERS! <br><br> 뮤직 ○l즈 ㅁト○l ㄹΓ잎..</div>
+               <!-- <div class="profile-footer">
                  <select name="page" id="page" class="select-wave" onchange="window.open(value,'_blank');">
                    <option value="none"><a class="dropdown-item" href="#">바로가기</a></option>
                    <option value="https://cafe.naver.com/codeuniv">코뮤니티로 가기</option>
                    <option value="https://codemate.kr/">코드메이트로 가기</option>
                  </select>
-               </div>
+               </div> -->
              </div>
            </div>
            <div class="main-box">
              <div class="post-box">
-               <div class="post-name">ㄴr만의 도토ㄹi BOX</div>
+               <div class="post-name">{{ user_name }}의 미니홈피</div>
              </div>
              <div class="box">
                <div class="miniroom">듣고 싶은 노래를 3개 선택해주세요</div>
@@ -80,6 +80,7 @@
 
                     {% endfor %}
                   </div>
+                <input type='hidden' name="user_name" value="{{ user_name }}">
                 <input type='hidden' name="total_array" value="{{ total_array }}">
                 <div stype="width:90%; margin:10px auto;" >
                   <div style="float: right; width:15%; box-sizing:border-box;">
@@ -94,8 +95,7 @@
            </div>
            <div class="side-menu">
              <div class="side-menubar">
-               <a href="{% url 'index:index' %}">홈</a>
-               <a href="{% url 'visitors_book:index' %}">방명록</a>
+               <a href="{% url 'index:index' %}">육미의 <br> 세포들 HOME</a>
              </div>
            </div>
          </div>

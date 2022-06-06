@@ -44,7 +44,8 @@ def predict_sentiment_user(sentence_list, tokenizer, model):
     emotions = ['분노와 혐오','놀람과 공포','슬픔','행복']
     total_array_emotions = []
     for i in range(len(emotions)):
-        total_array_emotions.append((emotions[i], total_array[0][i]))
+        total_array_emotions.append((emotions[i], np.round(total_array[0][i]*100, 2)))
+        # total_array_emotions.append((emotions[i], np.trunc(total_array[0][i]*100)))
 
     #가장 높은 확률값
     top_pred_prob = total_array[0][np.argmax(total_array, axis=1)[0]]
