@@ -9,7 +9,7 @@
 <hr>
 
 
-##1. Index
+## 1. Index
 <img width="80%" src="https://user-images.githubusercontent.com/49083528/172381153-358b463c-1b40-4436-a740-d0d76d553409.png"/>
 
   - 유저 이름 입력   
@@ -18,7 +18,7 @@
 
 <br>
 
-##2. visitors book
+## 2. visitors book
 <img width="80%" src="https://user-images.githubusercontent.com/49083528/172381303-d0cdd8b4-d987-4b9f-91fb-78f13ce817ed.png"/>
   
   - views.visitors_book를 통해 호출하면서 timezone.now()로 현재시간을 가져와 방명록 작성시간 보여줌   
@@ -40,7 +40,7 @@
   
 <br>
 
-##3. music choice
+## 3. music choice
 <img width="80%" src="https://user-images.githubusercontent.com/49083528/172381522-1fb2add5-f381-4801-adf8-b649d99146ce.png"/>
   
   - 감정별 플레이리스트가 담긴 csv파일에서 2곡씩 랜덤추출하여 사용자에게 보여주고 3곡 선택하게 함
