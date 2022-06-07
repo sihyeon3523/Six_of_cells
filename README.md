@@ -113,6 +113,8 @@
 - pickle 파일 load, input 데이터로 전처리, 분석의 코드입니다
 
 <br>
+<br>
+<br>
 
 # emotion_base_recommendation.jpynb
 <br>
