@@ -118,15 +118,18 @@
 1. 사용자가 선택한 노래와 가장 유사한 노래를 찾는다.
 2. 유사한 노래 중 사용자의 감정과 가장 비슷한 노래를 추천해준다.
 <br>
+
 ## 1. Data Load
 - sample_songlist.csv : 가사 띄어쓰기가 잘 되어있는 노래 정보 데이터
 - df_final_lyrics.csv : 노래의 가사에 대한 4가지 감정이 태깅되어 있는 데이터
 - sample_songlist.csv 의 제목과 가수를 기준으로 두 csv 파일을 합친다.
 <br>
+
 ## 2. Data Exploration
 - 가사가 "슬픔"으로 분류되는 감정이 가장 많은 장르는 발라드이다.
 - 가사가 "분노혐오"로 분류되는 감정이 가장 많은 장르는 발라드이다.
 <br>
+
 ## 3. Song similarity
 - 노래 간의 유사도를 구하기 위해 다음을 이용한다.
 1. Genre Similarity by Countervectorizer & Cosine_Similarity
