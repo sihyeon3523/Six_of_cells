@@ -2,9 +2,10 @@
 2. KoBERT_keras_2_del_neu
 3. KoBERT_keras_2_netral_undersampling
 4. KoBERT_4_labels
-5. emotion_base_recomnnedation
+5. emotion_base_recommnedation
 
 <br>
+KoBERT
 
 # 0. Introdunction
 
@@ -108,3 +109,43 @@
 # 6. Load Saved Model
 
 - pickle 파일 load, input 데이터로 전처리, 분석의 코드입니다
+
+<br>
+
+emotion_base_recommendation
+
+# 0. Introdunction
+1. 사용자가 선택한 노래와 가장 유사한 노래를 찾는다.
+2. 유사한 노래 중 사용자의 감정과 가장 비슷한 노래를 추천해준다.
+
+# 1. Data Load
+- sample_songlist.csv : 가사 띄어쓰기가 잘 되어있는 노래 정보 데이터
+- df_final_lyrics.csv : 노래의 가사에 대한 4가지 감정이 태깅되어 있는 데이터
+- sample_songlist.csv 의 제목과 가수를 기준으로 두 csv 파일을 합친다.
+
+# 2. Data Exploration
+- 가사가 "슬픔"으로 분류되는 감정이 가장 많은 장르는 발라드이다.
+- 가사가 "분노혐오"로 분류되는 감정이 가장 많은 장르는 발라드이다.
+
+# 3. Song similarity
+- 노래 간의 유사도를 구하기 위해 다음을 이용한다.
+1. Genre Similarity by Countervectorizer & Cosine_Similarity
+2. Lyrics Similarity by Tfidfvectorizer & Cosine_Similarity
+- 임의로 가중치 부여
+song_simi_co = (
+                 + song_simi_genre * 0.3 # 가중치 0.3 * 장르 유사도
+                 + song_simi_lyric * 1 # 가중치 1 * 가사 유사도
+                 )
+-> 가사의 유사도가 낮고, 가사의 감정 기반으로 추천하기 때문에 유사도를 높게 설정했다.
+
+# 4. Song Recommendation (in Django)
+- 사용자가 선택한 노래에서 3에서 구한 유사도 값이 큰 노래를 뽑는다.
+- 유사도 값이 큰 노래 중 사용자의 감정과 가장 유사한 노래를 뽑는다.
+1. 사용자의 감정을 numpy 배열로 변환한다.
+2. 사용자의 감정 확률 값과 유사한 노래 감정 확률의 유사도를 Cosine Similarity로 구한다.
+3. Cosine Similarity 값이 큰 노래 5곡을 추천한다.
+
+
+
+
+
