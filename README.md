@@ -1,10 +1,10 @@
 # Contents
 
-[1. Index](#1.-index)
+[1. Index](#1-index)
 
-[2. visitors book](#2.-visitors-book)
+[2. visitors book](#2-visitors-book)
 
-[3. music choice](#3.-music-choice)
+[3. music choice](#3-music-choice)
 
 <hr>
 
