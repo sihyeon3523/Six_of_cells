@@ -5,6 +5,7 @@
 5. emotion_base_recommnedation
 
 <br>
+
 # KoBERT.jpynb
 <br>
 
@@ -141,7 +142,7 @@ song_simi_co = (
                  + song_simi_genre * 0.3 # 가중치 0.3 * 장르 유사도
                  + song_simi_lyric * 1 # 가중치 1 * 가사 유사도
                  )
--> 가사의 유사도가 낮고, 가사의 감정 기반으로 추천하기 때문에 유사도를 높게 설정했다.
+- -> 가사의 유사도가 낮고, 가사의 감정 기반으로 추천하기 때문에 유사도를 높게 설정했다.
 <br>
 
 ## 4. Song Recommendation (in Django)
