@@ -5,7 +5,8 @@
 5. emotion_base_recommnedation
 
 <br>
-# KoBERT
+# KoBERT.jpynb
+<br>
 
 ## 0. Introdunction
 
@@ -112,8 +113,9 @@
 
 <br>
 
-# emotion_base_recommendation
+# emotion_base_recommendation.jpynb
 <br>
+
 ## 0. Introdunction
 1. 사용자가 선택한 노래와 가장 유사한 노래를 찾는다.
 2. 유사한 노래 중 사용자의 감정과 가장 비슷한 노래를 추천해준다.
