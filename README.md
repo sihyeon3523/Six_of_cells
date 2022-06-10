@@ -13,7 +13,7 @@
 
 <br>
 
-## 웹 시연 gif
+## 서비스 시연
 ![서비스시연](https://user-images.githubusercontent.com/49083528/171119984-838423f7-8f67-410a-90e4-52daec915c83.gif)
 
 <br>
